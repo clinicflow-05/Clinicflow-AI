@@ -4,7 +4,15 @@ from pathlib import Path
 from datetime import datetime
 from urllib.parse import quote
 import re
+import requests
 
+WEBHOOK_GOOGLE_SHEETS = "https://script.google.com/macros/s/AKfycbyaOI6uX5xmTgcns7JEvF_YBfAyJAKZ3oSRKvy0e4NLWJdW1XImde9DZMXDf8LWG8ouzg/exec"
+
+def invia_a_google_sheets(row):
+    try:
+        requests.post(WEBHOOK_GOOGLE_SHEETS, json=row, timeout=10)
+    except Exception as e:
+        print("Eroare Google Sheets:", e)
 st.set_page_config(
     page_title="Assistente Prenotazioni",
     page_icon="📅",
@@ -122,7 +130,7 @@ def salva_lead(dati):
         df = df_nuovo
 
     df.to_csv(LEADS_FILE, index=False)
-
+    invia_a_google_sheets(row)
 
 def aggiungi(role, testo):
     st.session_state.chat.append((role, testo))
