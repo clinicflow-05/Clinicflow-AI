@@ -268,6 +268,8 @@ st.markdown("""
     background: #f8fbfd;
     border: 1px solid #dce7ee;
     padding: 16px;
+    color:#1f2937 !important;
+    min-height: auto !important;                
     border-radius: 14px;
     margin-bottom: 18px;
 }
