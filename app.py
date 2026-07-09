@@ -295,6 +295,7 @@ st.markdown("""
     padding: 14px;
     border-radius: 14px;
     margin: 12px 0;
+    color: #1f2937 !important;        
 }
 </style>
 """, unsafe_allow_html=True)
