@@ -275,6 +275,7 @@ st.markdown("""
 }
 .assistant {
     background: #fff7e8;
+    color: #1f2937 !important;        
     border-left: 4px solid #e9a11a;
     padding: 12px;
     border-radius: 12px;
@@ -282,6 +283,7 @@ st.markdown("""
 }
 .user {
     background: #f2f4f7;
+    color: #1f2937 !important;        
     border-left: 4px solid #d94f4f;
     padding: 12px;
     border-radius: 12px;
