@@ -10,7 +10,7 @@ WEBHOOK_GOOGLE_SHEETS = "https://script.google.com/macros/s/AKfycbyaOI6uX5xmTgcn
 
 def invia_a_google_sheets(row):
     try:
-     requests.post(WEBHOOK_GOOGLE_SHEETS, data=row, timeout=10)
+     requests.post(WEBHOOK_GOOGLE_SHEETS, json=row, timeout=10)
     except Exception as e:
         print("Eroare Google Sheets:", e)
 st.set_page_config(
@@ -346,10 +346,9 @@ for role, testo in st.session_state.chat:
         f'<div class="{css}">{icon} {testo}</div>',
         unsafe_allow_html=True
     )
-
-
-st.markdown("""
-<div class="start-box">
+if st.session_state.frase== "inizio":
+     st.markdown("""
+    <div class="start-box">
     <b>Vuoi richiedere un appuntamento?</b><br>
     Puoi scegliere un trattamento qui sotto oppure scrivere direttamente: “Vorrei Botox Milano”.
 </div>
