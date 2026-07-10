@@ -346,7 +346,7 @@ for role, testo in st.session_state.chat:
         f'<div class="{css}">{icon} {testo}</div>',
         unsafe_allow_html=True
     )
-if st.session_state.frase== "inizio":
+if st.session_state.fase== "inizio":
      st.markdown("""
     <div class="start-box">
     <b>Vuoi richiedere un appuntamento?</b><br>
