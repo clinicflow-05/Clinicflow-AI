@@ -10,7 +10,9 @@ WEBHOOK_GOOGLE_SHEETS = "https://script.google.com/macros/s/AKfycbyaOI6uX5xmTgcn
 
 def invia_a_google_sheets(row):
     try:
-     requests.post(WEBHOOK_GOOGLE_SHEETS, json=row, timeout=10)
+     response = requests.post(WEBHOOK_GOOGLE_SHEETS, json=row, timeout=10)
+     print("Google Sheets status:", response.status_code)
+     print("Google Sheets response:", response.text)
     except Exception as e:
         print("Eroare Google Sheets:", e)
 st.set_page_config(
@@ -131,6 +133,7 @@ def salva_lead(dati):
 
     df.to_csv(LEADS_FILE, index=False)
     invia_a_google_sheets(row)
+    print("am ajuns la google sheet")
 
 def aggiungi(role, testo):
     st.session_state.chat.append((role, testo))
