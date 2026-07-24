@@ -10,11 +10,16 @@ GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyl0FgDCCuyYdzOc1F2
 
 def invia_a_google_sheets(row):
     try:
-     response = requests.post(GOOGLE_SCRIPT_URL, json=row, timeout=10)
-     print("Google Sheets status:", response.status_code)
-     print("Google Sheets response:", response.text)
+        response = requests.post(
+            GOOGLE_SCRIPT_URL,
+            json=row,
+            timeout=10
+        )
+        st.success(
+            f"DEBUG Calendar: status {response.status_code} - {response.text}"
+        )
     except Exception as e:
-        print("Eroare Google Sheets:", e)
+        st.error(f"DEBUG Eroare Calendar: {e}")
 st.set_page_config(
     page_title="Assistente Prenotazioni",
     page_icon="📅",
