@@ -6,11 +6,11 @@ from urllib.parse import quote
 import re
 import requests
 
-WEBHOOK_GOOGLE_SHEETS = "https://script.google.com/macros/s/AKfycbyl0FgDCCuyYdzOc1F2CwwgbUjOMJuDU7CDu9MV3LSvmVs_W8SivIBb5j6EhnY3XmpbIg/exec"
+GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyl0FgDCCuyYdzOc1F2CwwgbUjOMJuDU7CDu9MV3LSvmVs_W8SivIBb5j6EhnY3XmpbIg/exec"
 
 def invia_a_google_sheets(row):
     try:
-     response = requests.post(WEBHOOK_GOOGLE_SHEETS, json=row, timeout=10)
+     response = requests.post(GOOGLE_SCRIPT_URL, json=row, timeout=10)
      print("Google Sheets status:", response.status_code)
      print("Google Sheets response:", response.text)
     except Exception as e:
