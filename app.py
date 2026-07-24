@@ -6,7 +6,7 @@ from urllib.parse import quote
 import re
 import requests
 
-WEBHOOK_GOOGLE_SHEETS = "https://script.google.com/macros/s/AKfycbyaOI6uX5xmTgcns7JEvF_YBfAyJAKZ3oSRKvy0e4NLWJdW1XImde9DZMXDf8LWG8ouzg/exec"
+WEBHOOK_GOOGLE_SHEETS = "https://script.google.com/macros/s/AKfycbyl0FgDCCuyYdzOc1F2CwwgbUjOMJuDU7CDu9MV3LSvmVs_W8SivIBb5j6EhnY3XmpbIg/exec"
 
 def invia_a_google_sheets(row):
     try:
